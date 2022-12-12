@@ -11,9 +11,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setView()
     }
 
+    private func setView() {
+        print(Bundle.main.bundlePath)
+        view.backgroundColor = .lightGray
+    }
 
 }
 
