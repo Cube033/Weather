@@ -40,7 +40,10 @@ class MainCoordinator {
     
     func startApplication(){
         if SettingsManager.shared.onboardingIsCleared {
-            self.window?.rootViewController = CitiesPageController()
+            let viewController = CitiesPageController()
+            //viewController.coordinatorOpt = self
+            navigationController.setViewControllers([viewController], animated: true)
+            self.window?.rootViewController = navigationController
         } else {
             let viewController = OnBoardingViewController(coordinator: self)
             self.window?.rootViewController = viewController

@@ -149,35 +149,37 @@ class OnBoardingViewController: UIViewController {
     
     //MARK: - Constraints
     private func setConstraints() {
-        headImage.widthAnchor.constraint(equalToConstant: 180).isActive = true
-        headImage.heightAnchor.constraint(equalToConstant: 196).isActive = true
-        headImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        headImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 148).isActive = true
+        NSLayoutConstraint.activate([
+        headImage.widthAnchor.constraint(equalToConstant: 180),
+        headImage.heightAnchor.constraint(equalToConstant: 196),
+        headImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        headImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 148),
         
-        firstTextLabel.widthAnchor.constraint(equalToConstant: 322).isActive = true
-        firstTextLabel.heightAnchor.constraint(equalToConstant: 68).isActive = true
-        firstTextLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        firstTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400).isActive = true
+        firstTextLabel.widthAnchor.constraint(equalToConstant: 322),
+        firstTextLabel.heightAnchor.constraint(equalToConstant: 68),
+        firstTextLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        firstTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 400),
         
-        secondTextLabel.widthAnchor.constraint(equalToConstant: 314).isActive = true
-        secondTextLabel.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        secondTextLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        secondTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 519).isActive = true
+        secondTextLabel.widthAnchor.constraint(equalToConstant: 314),
+        secondTextLabel.heightAnchor.constraint(equalToConstant: 45),
+        secondTextLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        secondTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 519),
         
-        thirdTextLabel.widthAnchor.constraint(equalToConstant: 314).isActive = true
-        thirdTextLabel.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        thirdTextLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        thirdTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 569).isActive = true
+        thirdTextLabel.widthAnchor.constraint(equalToConstant: 314),
+        thirdTextLabel.heightAnchor.constraint(equalToConstant: 45),
+        thirdTextLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        thirdTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 569),
         
-        getLocationAccessButton.widthAnchor.constraint(equalToConstant: 340).isActive = true
-        getLocationAccessButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        getLocationAccessButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        getLocationAccessButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 649).isActive = true
+        getLocationAccessButton.widthAnchor.constraint(equalToConstant: 340),
+        getLocationAccessButton.heightAnchor.constraint(equalToConstant: 40),
+        getLocationAccessButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        getLocationAccessButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 649),
         
-        cancelButton.widthAnchor.constraint(equalToConstant: 340).isActive = true
-        cancelButton.heightAnchor.constraint(equalToConstant: 21).isActive = true
-        cancelButton.trailingAnchor.constraint(equalTo: getLocationAccessButton.trailingAnchor).isActive = true
-        cancelButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 714).isActive = true
+        cancelButton.widthAnchor.constraint(equalToConstant: 340),
+        cancelButton.heightAnchor.constraint(equalToConstant: 21),
+        cancelButton.trailingAnchor.constraint(equalTo: getLocationAccessButton.trailingAnchor),
+        cancelButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 714),
+        ])
     }
 
 }
