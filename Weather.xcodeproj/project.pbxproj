@@ -37,6 +37,13 @@
 		0AAAD3A6294B6D0500537104 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AAAD398294B6D0500537104 /* Rubik-ExtraBold.ttf */; };
 		0AAAD3A7294B6D0500537104 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AAAD399294B6D0500537104 /* Rubik-Regular.ttf */; };
 		0AAAD3A8294B6D0500537104 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0AAAD39A294B6D0500537104 /* Rubik-BoldItalic.ttf */; };
+		0AAAD3AA294C9D0500537104 /* CityControllerHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3A9294C9D0500537104 /* CityControllerHours.swift */; };
+		0AAAD3AC294C9DA000537104 /* DayHoursIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3AB294C9DA000537104 /* DayHoursIconModel.swift */; };
+		0AAAD3AE294DF37600537104 /* HoursCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3AD294DF37600537104 /* HoursCollectionViewCell.swift */; };
+		0AAAD3B0294E197E00537104 /* WeatherIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3AF294E197E00537104 /* WeatherIconManager.swift */; };
+		0AAAD3B2294E20DD00537104 /* CityControllerDaysHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3B1294E20DD00537104 /* CityControllerDaysHeader.swift */; };
+		0AAAD3B4294E327400537104 /* CityControllerDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */; };
+		0AAAD3B6294E42A100537104 /* CityDaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3B5294E42A100537104 /* CityDaysModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +79,13 @@
 		0AAAD398294B6D0500537104 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
 		0AAAD399294B6D0500537104 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		0AAAD39A294B6D0500537104 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0AAAD3A9294C9D0500537104 /* CityControllerHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityControllerHours.swift; sourceTree = "<group>"; };
+		0AAAD3AB294C9DA000537104 /* DayHoursIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayHoursIconModel.swift; sourceTree = "<group>"; };
+		0AAAD3AD294DF37600537104 /* HoursCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursCollectionViewCell.swift; sourceTree = "<group>"; };
+		0AAAD3AF294E197E00537104 /* WeatherIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconManager.swift; sourceTree = "<group>"; };
+		0AAAD3B1294E20DD00537104 /* CityControllerDaysHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityControllerDaysHeader.swift; sourceTree = "<group>"; };
+		0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityControllerDayCell.swift; sourceTree = "<group>"; };
+		0AAAD3B5294E42A100537104 /* CityDaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDaysModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +117,10 @@
 			isa = PBXGroup;
 			children = (
 				0A1214CD294A16DB002A256B /* CityControllerHeader.swift */,
+				0AAAD3A9294C9D0500537104 /* CityControllerHours.swift */,
+				0AAAD3AD294DF37600537104 /* HoursCollectionViewCell.swift */,
+				0AAAD3B1294E20DD00537104 /* CityControllerDaysHeader.swift */,
+				0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +131,7 @@
 				0A31C1D52949142500E4730E /* LocationManager.swift */,
 				0A1214CA294922CB002A256B /* StorageManager.swift */,
 				0A31C1D32948A9AC00E4730E /* SettingsManager.swift */,
+				0AAAD3AF294E197E00537104 /* WeatherIconManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -121,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				0A1214D1294B3EFF002A256B /* DayMiniModel.swift */,
+				0AAAD3AB294C9DA000537104 /* DayHoursIconModel.swift */,
+				0AAAD3B5294E42A100537104 /* CityDaysModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,17 +285,24 @@
 			files = (
 				0A1214C029491D94002A256B /* BlankCityViewController.swift in Sources */,
 				0A31C1C32947C43F00E4730E /* Weather.xcdatamodeld in Sources */,
+				0AAAD3AA294C9D0500537104 /* CityControllerHours.swift in Sources */,
 				0A1214C629491F6C002A256B /* AllDayViewController.swift in Sources */,
+				0AAAD3B2294E20DD00537104 /* CityControllerDaysHeader.swift in Sources */,
 				0A31C1D42948A9AC00E4730E /* SettingsManager.swift in Sources */,
 				0A31C1D62949142500E4730E /* LocationManager.swift in Sources */,
+				0AAAD3AC294C9DA000537104 /* DayHoursIconModel.swift in Sources */,
+				0AAAD3B4294E327400537104 /* CityControllerDayCell.swift in Sources */,
 				0A1214C429491F4F002A256B /* HoursViewController.swift in Sources */,
 				0A31C1D02948A70300E4730E /* MainCoordinator.swift in Sources */,
+				0AAAD3B6294E42A100537104 /* CityDaysModel.swift in Sources */,
 				0A1214CE294A16DB002A256B /* CityControllerHeader.swift in Sources */,
 				0A1214C229491F3C002A256B /* CityViewController.swift in Sources */,
 				0A31C1B92947C43F00E4730E /* AppDelegate.swift in Sources */,
+				0AAAD3AE294DF37600537104 /* HoursCollectionViewCell.swift in Sources */,
 				0A1214BE29491C9E002A256B /* CitiesPageController.swift in Sources */,
 				0A31C1D22948A76D00E4730E /* OnBoardingViewController.swift in Sources */,
 				0A1214D2294B3EFF002A256B /* DayMiniModel.swift in Sources */,
+				0AAAD3B0294E197E00537104 /* WeatherIconManager.swift in Sources */,
 				0A1214C829491F80002A256B /* SettingsViewController.swift in Sources */,
 				0A1214CB294922CB002A256B /* StorageManager.swift in Sources */,
 			);

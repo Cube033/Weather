@@ -9,7 +9,13 @@ import UIKit
 
 class CityViewController: UITableViewController {
 
-    //private(set) var coordinator: MainCoordinator
+    var cityDaysModel: CityDaysModel?
+    
+    var model: CityDaysModel {
+        get {
+            return cityDaysModel ?? CityDaysModel.getEmptyModel()
+        }
+    }
     
     init(){
         //self.coordinator = coordinator
@@ -28,16 +34,23 @@ class CityViewController: UITableViewController {
     
     private func setView() {
        // view.backgroundColor = .purple
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.register(CityControllerDayCell.self, forCellReuseIdentifier: "CityControllerDayCell")
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = "Сортировка по возрастанию"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CityControllerDayCell", for: indexPath) as! CityControllerDayCell
+        cell.setupCell(model: model.daysArray[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        if section == 2 {
+            return model.daysArray.count
+        } else {
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -50,6 +63,10 @@ class CityViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             return CityControllerHeader(dayMiniModel: DayMiniModel.getEmptyModel())
+        } else if section == 1 {
+            return CityControllerHours(dayHoursIconModel: DayHoursIconModel.getEmptyModel())
+        } else if section == 2 {
+            return CityControllerDaysHeader()
         } else {
             return UIView()
         }
@@ -58,12 +75,18 @@ class CityViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == 0 {
             return 190
+        } else if section == 1 {
+            return 170
         } else {
-            return 190
+            return 25
         }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        3
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
