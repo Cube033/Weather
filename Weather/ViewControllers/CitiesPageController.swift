@@ -11,21 +11,27 @@ class CitiesPageController: UIPageViewController {
     
     //MARK: - Variables
     
-    var coordinatorOpt: MainCoordinator?
+    var mainCoordinator: MainCoordinator?
+    
+    var coordinator: MainCoordinator {
+        get {
+            return mainCoordinator ?? MainCoordinator(window: UIWindow())
+        }
+    }
     
     lazy var viewControllersArray = {
         var array:[UIViewController] = []
-        
         let locationManager = LocationManager()
-        //guard let coordinator = coordinatorOpt else {return [UIViewController()]}
         if locationManager.locationAllowed {
-            array.append(CityViewController())
+            let cityViewController = CityViewController(navController: coordinator.navigationController)
+            array.append(cityViewController)
         } else {
             array.append(BlankCityViewController())
         }
         let citiesArray = StorageManager.shared.getCities()
         for oneCity in citiesArray {
-            array.append(CityViewController())
+            let cityViewController = CityViewController(navController: coordinator.navigationController)
+            array.append(cityViewController)
         }
         return array
     }()
@@ -44,12 +50,18 @@ class CitiesPageController: UIPageViewController {
     
     override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: navigationOrientation)
-        setViewControllers([viewControllersArray[0]], direction: .forward, animated: true)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    convenience init(mainCoordinator: MainCoordinator) {
+        self.init()
+        self.mainCoordinator = mainCoordinator
+        setViewControllers([viewControllersArray[0]], direction: .forward, animated: true)
+    }
+    
     
     //MARK: - Life cycle
     

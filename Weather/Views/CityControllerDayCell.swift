@@ -64,7 +64,7 @@ class CityControllerDayCell: UITableViewCell {
         view.font = UIFont(name: "Rubik-Regular", size: 18)
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.08
-        view.attributedText = NSMutableAttributedString(string: "4 -11", attributes: [NSAttributedString.Key.kern: -0.18, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        view.attributedText = NSMutableAttributedString(string: "0 -0", attributes: [NSAttributedString.Key.kern: -0.18, NSAttributedString.Key.paragraphStyle: paragraphStyle])
         return view
     }()
     

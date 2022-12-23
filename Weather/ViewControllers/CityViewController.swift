@@ -11,13 +11,22 @@ class CityViewController: UITableViewController {
 
     var cityDaysModel: CityDaysModel?
     
+    var navController: UINavigationController
+    
+    let cityControllerHeader = CityControllerHeader(dayMiniModel: DayMiniModel.getEmptyModel())
+    
+    let cityControllerHours = CityControllerHours(dayHoursIconModel: DayHoursIconModel.getEmptyModel())
+    
+    let cityControllerDaysHeader = CityControllerDaysHeader()
+    
     var model: CityDaysModel {
         get {
             return cityDaysModel ?? CityDaysModel.getEmptyModel()
         }
     }
     
-    init(){
+    init(navController: UINavigationController){
+        self.navController = navController
         //self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,6 +46,16 @@ class CityViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.register(CityControllerDayCell.self, forCellReuseIdentifier: "CityControllerDayCell")
+        cityControllerHours.goToHoursButton.addAction(UIAction { _ in
+            print("go to hours")
+            self.navController.pushViewController(HoursViewController(navController: self.navController), animated: true)
+//            self.navigationController?.pushViewController(HoursViewController(), animated: true)
+//            if let navControllerExist = self.navController {
+//                navControllerExist.pushViewController(HoursViewController(), animated: true)
+//            } else {
+//                print("nav controller is empty")
+//            }
+        }, for: .touchUpInside)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,11 +81,11 @@ class CityViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            return CityControllerHeader(dayMiniModel: DayMiniModel.getEmptyModel())
+            return cityControllerHeader
         } else if section == 1 {
-            return CityControllerHours(dayHoursIconModel: DayHoursIconModel.getEmptyModel())
+            return cityControllerHours
         } else if section == 2 {
-            return CityControllerDaysHeader()
+            return cityControllerDaysHeader
         } else {
             return UIView()
         }

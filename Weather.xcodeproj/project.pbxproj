@@ -44,6 +44,8 @@
 		0AAAD3B2294E20DD00537104 /* CityControllerDaysHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3B1294E20DD00537104 /* CityControllerDaysHeader.swift */; };
 		0AAAD3B4294E327400537104 /* CityControllerDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */; };
 		0AAAD3B6294E42A100537104 /* CityDaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3B5294E42A100537104 /* CityDaysModel.swift */; };
+		0AD8FDDA2951C77000606CA6 /* HoursControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */; };
+		0AD8FDDD29550CB200606CA6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 0AD8FDDC29550CB200606CA6 /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,7 @@
 		0AAAD3B1294E20DD00537104 /* CityControllerDaysHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityControllerDaysHeader.swift; sourceTree = "<group>"; };
 		0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityControllerDayCell.swift; sourceTree = "<group>"; };
 		0AAAD3B5294E42A100537104 /* CityDaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDaysModel.swift; sourceTree = "<group>"; };
+		0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursControllerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD8FDDD29550CB200606CA6 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +125,7 @@
 				0AAAD3AD294DF37600537104 /* HoursCollectionViewCell.swift */,
 				0AAAD3B1294E20DD00537104 /* CityControllerDaysHeader.swift */,
 				0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */,
+				0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +221,9 @@
 			dependencies = (
 			);
 			name = Weather;
+			packageProductDependencies = (
+				0AD8FDDC29550CB200606CA6 /* Charts */,
+			);
 			productName = Weather;
 			productReference = 0A31C1B52947C43F00E4730E /* Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -244,6 +252,9 @@
 				Base,
 			);
 			mainGroup = 0A31C1AC2947C43E00E4730E;
+			packageReferences = (
+				0AD8FDDB29550CB100606CA6 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 0A31C1B62947C43F00E4730E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,6 +311,7 @@
 				0A31C1B92947C43F00E4730E /* AppDelegate.swift in Sources */,
 				0AAAD3AE294DF37600537104 /* HoursCollectionViewCell.swift in Sources */,
 				0A1214BE29491C9E002A256B /* CitiesPageController.swift in Sources */,
+				0AD8FDDA2951C77000606CA6 /* HoursControllerCell.swift in Sources */,
 				0A31C1D22948A76D00E4730E /* OnBoardingViewController.swift in Sources */,
 				0A1214D2294B3EFF002A256B /* DayMiniModel.swift in Sources */,
 				0AAAD3B0294E197E00537104 /* WeatherIconManager.swift in Sources */,
@@ -501,6 +513,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0AD8FDDB29550CB100606CA6 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0AD8FDDC29550CB200606CA6 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AD8FDDB29550CB100606CA6 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0A31C1C12947C43F00E4730E /* Weather.xcdatamodeld */ = {
