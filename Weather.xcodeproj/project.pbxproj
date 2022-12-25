@@ -46,6 +46,7 @@
 		0AAAD3B6294E42A100537104 /* CityDaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAAD3B5294E42A100537104 /* CityDaysModel.swift */; };
 		0AD8FDDA2951C77000606CA6 /* HoursControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */; };
 		0AD8FDDD29550CB200606CA6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 0AD8FDDC29550CB200606CA6 /* Charts */; };
+		0AF603FA2955345A000F22E7 /* DayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF603F92955345A000F22E7 /* DayDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityControllerDayCell.swift; sourceTree = "<group>"; };
 		0AAAD3B5294E42A100537104 /* CityDaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDaysModel.swift; sourceTree = "<group>"; };
 		0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursControllerCell.swift; sourceTree = "<group>"; };
+		0AF603F92955345A000F22E7 /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				0AAAD3B1294E20DD00537104 /* CityControllerDaysHeader.swift */,
 				0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */,
 				0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */,
+				0AF603F92955345A000F22E7 /* DayDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				0A1214C629491F6C002A256B /* AllDayViewController.swift in Sources */,
 				0AAAD3B2294E20DD00537104 /* CityControllerDaysHeader.swift in Sources */,
 				0A31C1D42948A9AC00E4730E /* SettingsManager.swift in Sources */,
+				0AF603FA2955345A000F22E7 /* DayDetailView.swift in Sources */,
 				0A31C1D62949142500E4730E /* LocationManager.swift in Sources */,
 				0AAAD3AC294C9DA000537104 /* DayHoursIconModel.swift in Sources */,
 				0AAAD3B4294E327400537104 /* CityControllerDayCell.swift in Sources */,

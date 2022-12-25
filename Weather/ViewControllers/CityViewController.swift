@@ -76,6 +76,7 @@ class CityViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navController.pushViewController(AllDayViewController(), animated: true)
         
     }
     
