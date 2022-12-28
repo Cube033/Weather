@@ -53,4 +53,18 @@ class MainCoordinator {
         self.window?.makeKeyAndVisible()
     }
     
+    func addCityButtonTapped(viewController: UIViewController) {
+        let cityNamePicker = CityNamePicker()
+        cityNamePicker.getCityName(showIn: viewController, completion: {(cityNameText: String) in
+            NetworkManager.shared.getCityByName(name: cityNameText, completion:
+                                                    {(cityDataOptional) in
+                if let cityData = cityDataOptional {
+                    StorageManager.shared.addNewCity(cityData: cityData)
+                } else {
+                    CityNamePicker.setAlert(showIn: viewController, textMessage: "Произошла ошибка")
+                }
+            })
+        })
+    }
+    
 }

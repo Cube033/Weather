@@ -9,11 +9,13 @@ import UIKit
 
 class BlankCityViewController: UIViewController {
 
-    let addCityButton = {
+    var mainCoordinator: MainCoordinator?
+    
+    lazy var addCityButton = {
         var view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = .black
         view.setImage(UIImage(named: "CityPlusIcon"), for: .normal)
+        view.addTarget(self, action: #selector(addCityButtonTapped), for: .touchUpInside)
         return view
     }()
     
@@ -32,17 +34,16 @@ class BlankCityViewController: UIViewController {
         setConstraints()
     }
     
+    @objc private func addCityButtonTapped() {
+        mainCoordinator?.addCityButtonTapped(viewController: self)
+    }
+    
     //MARK: - Constraints
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-//            addCityButton.widthAnchor.constraint(equalToConstant: 250),
-//            addCityButton.heightAnchor.constraint(equalToConstant: 250),
             addCityButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addCityButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-//            addCityButton.imageView!.widthAnchor.constraint(equalToConstant: 250),
-//            addCityButton.imageView!.heightAnchor.constraint(equalToConstant: 250),
         ])
     }
 }

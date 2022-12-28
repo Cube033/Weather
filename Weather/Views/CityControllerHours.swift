@@ -22,7 +22,6 @@ class CityControllerHours: UIView {
     let goToHoursButton = {
         var view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = .yellow
         let attributedString = NSAttributedString(string: NSLocalizedString("Подробнее на 24 часа", comment: ""), attributes:[
             NSAttributedString.Key.font : UIFont(name: "Rubik-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16),
             NSAttributedString.Key.foregroundColor : UIColor(red: 0.154, green: 0.152, blue: 0.135, alpha: 1),

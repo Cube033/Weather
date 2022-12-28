@@ -26,7 +26,9 @@ class CitiesPageController: UIPageViewController {
             let cityViewController = CityViewController(navController: coordinator.navigationController)
             array.append(cityViewController)
         } else {
-            array.append(BlankCityViewController())
+            let blankCityViewController = BlankCityViewController()
+            blankCityViewController.mainCoordinator = mainCoordinator
+            array.append(blankCityViewController)
         }
         let citiesArray = StorageManager.shared.getCities()
         for oneCity in citiesArray {
@@ -84,6 +86,24 @@ class CitiesPageController: UIPageViewController {
         view.backgroundColor = .clear
         
         addElements()
+        
+        let settingsBarButtonImage: UIImage = UIImage(named: "menuIcon") ?? UIImage()
+        let addCityButtonImage: UIImage = UIImage(named: "addCityIcon") ?? UIImage()
+        let settingsBarButtonItem = UIBarButtonItem(image: settingsBarButtonImage, style: .plain, target: self, action: #selector(settingsBarButtonTapped))
+        let addCityBarButtonItem = UIBarButtonItem(image: addCityButtonImage, style: .plain, target: self, action: #selector(addCityButtonTapped))
+        
+        navigationItem.leftBarButtonItem = settingsBarButtonItem
+        navigationItem.rightBarButtonItem = addCityBarButtonItem
+        
+        
+    }
+    
+    @objc private func settingsBarButtonTapped() {
+        navigationController?.pushViewController(SettingsViewController(), animated: true)
+    }
+    
+    @objc private func addCityButtonTapped() {
+        mainCoordinator?.addCityButtonTapped(viewController: self)
     }
     
     private func addElements() {

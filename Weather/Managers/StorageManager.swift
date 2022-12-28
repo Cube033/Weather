@@ -15,4 +15,9 @@ class StorageManager {
         
         return ["Kemerowo","Tomsk","Berlin"]
     }
+    
+    func addNewCity(cityData: CityDataCodable) {
+        print("Добавлен город \(cityData.name)")
+    }
+    
 }

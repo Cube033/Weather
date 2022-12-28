@@ -292,7 +292,7 @@ class CityControllerHeader: UIView {
             
             sunsetTimeLabel.widthAnchor.constraint(equalToConstant: 40),
             sunsetTimeLabel.heightAnchor.constraint(equalToConstant: 17),
-            sunsetTimeLabel.leadingAnchor.constraint(equalTo: sunriseTimeLabel.trailingAnchor, constant: 240),
+            sunsetTimeLabel.centerXAnchor.constraint(equalTo: sunTrackImageView.trailingAnchor),
             sunsetTimeLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 167),
         ])
     }

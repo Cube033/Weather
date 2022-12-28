@@ -68,8 +68,11 @@ class AllDayViewController: UIViewController {
     
     private func setView() {
         view.backgroundColor = .white
+        
         addElements()
         setConstraints()
+        
+        scrollView.contentSize = contentView.frame.size
         
     }
     
@@ -103,7 +106,6 @@ class AllDayViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
             
             cityLabel.widthAnchor.constraint(equalToConstant: 200),
             cityLabel.heightAnchor.constraint(equalToConstant: 22),
