@@ -23,7 +23,7 @@ class CitiesPageController: UIPageViewController {
         var array:[UIViewController] = []
         let locationManager = LocationManager()
         if locationManager.locationAllowed {
-            let cityViewController = CityViewController(navController: coordinator.navigationController)
+            let cityViewController = CityViewController(navController: coordinator.navigationController, cityData: CityDataCodable(name: "", localNames: LocalNameCodable(ru: ""), lat: 0, lon: 0, country: ""))
             array.append(cityViewController)
         } else {
             let blankCityViewController = BlankCityViewController()
@@ -32,7 +32,7 @@ class CitiesPageController: UIPageViewController {
         }
         let citiesArray = StorageManager.shared.getCities()
         for oneCity in citiesArray {
-            let cityViewController = CityViewController(navController: coordinator.navigationController)
+            let cityViewController = CityViewController(navController: coordinator.navigationController, cityData: oneCity.convertToCityDataCodable())
             array.append(cityViewController)
         }
         return array

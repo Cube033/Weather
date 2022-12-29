@@ -59,12 +59,24 @@ class MainCoordinator {
             NetworkManager.shared.getCityByName(name: cityNameText, completion:
                                                     {(cityDataOptional) in
                 if let cityData = cityDataOptional {
-                    StorageManager.shared.addNewCity(cityData: cityData)
+                    let operationResult = StorageManager.shared.addNewCity(cityData: cityData)
+                    DispatchQueue.main.async {
+                        var messageText: String
+                        switch operationResult {
+                        case .success(let checkIsSuccess):
+                            messageText = checkIsSuccess
+                        case .failure(let loginError):
+                            messageText = loginError
+                        }
+                        CityNamePicker.setAlert(showIn: viewController, textMessage: messageText)
+                    }
                 } else {
-                    CityNamePicker.setAlert(showIn: viewController, textMessage: "Произошла ошибка")
+                    DispatchQueue.main.async {
+                        CityNamePicker.setAlert(showIn: viewController, textMessage: "Произошла ошибка")
+                    }
                 }
             })
         })
-    }
+    } 
     
 }

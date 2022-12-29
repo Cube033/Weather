@@ -16,6 +16,8 @@
 		0A1214CB294922CB002A256B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1214CA294922CB002A256B /* StorageManager.swift */; };
 		0A1214CE294A16DB002A256B /* CityControllerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1214CD294A16DB002A256B /* CityControllerHeader.swift */; };
 		0A1214D2294B3EFF002A256B /* DayMiniModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1214D1294B3EFF002A256B /* DayMiniModel.swift */; };
+		0A264C7B295CEBEE0030B421 /* CurrentWeatherModelCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A264C7A295CEBEE0030B421 /* CurrentWeatherModelCodable.swift */; };
+		0A264C7D295CFAAF0030B421 /* DBCitiesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A264C7C295CFAAF0030B421 /* DBCitiesExtension.swift */; };
 		0A31C1B92947C43F00E4730E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31C1B82947C43F00E4730E /* AppDelegate.swift */; };
 		0A31C1C32947C43F00E4730E /* Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A31C1C12947C43F00E4730E /* Weather.xcdatamodeld */; };
 		0A31C1C52947C43F00E4730E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A31C1C42947C43F00E4730E /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		0A1214CA294922CB002A256B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		0A1214CD294A16DB002A256B /* CityControllerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityControllerHeader.swift; sourceTree = "<group>"; };
 		0A1214D1294B3EFF002A256B /* DayMiniModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayMiniModel.swift; sourceTree = "<group>"; };
+		0A264C7A295CEBEE0030B421 /* CurrentWeatherModelCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModelCodable.swift; sourceTree = "<group>"; };
+		0A264C7C295CFAAF0030B421 /* DBCitiesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCitiesExtension.swift; sourceTree = "<group>"; };
 		0A31C1B52947C43F00E4730E /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A31C1B82947C43F00E4730E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A31C1C22947C43F00E4730E /* Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weather.xcdatamodel; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				0AAAD3AB294C9DA000537104 /* DayHoursIconModel.swift */,
 				0AAAD3B5294E42A100537104 /* CityDaysModel.swift */,
 				0AF60401295C7BE7000F22E7 /* CityDataCodable.swift */,
+				0A264C7A295CEBEE0030B421 /* CurrentWeatherModelCodable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				0A31C1C12947C43F00E4730E /* Weather.xcdatamodeld */,
 				0A31C1CF2948A70300E4730E /* MainCoordinator.swift */,
 				0AF603FD295AF27D000F22E7 /* CityNamePicker.swift */,
+				0A264C7C295CFAAF0030B421 /* DBCitiesExtension.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 			files = (
 				0AF60400295C4934000F22E7 /* NetworkManager.swift in Sources */,
 				0A1214C029491D94002A256B /* BlankCityViewController.swift in Sources */,
+				0A264C7B295CEBEE0030B421 /* CurrentWeatherModelCodable.swift in Sources */,
 				0A31C1C32947C43F00E4730E /* Weather.xcdatamodeld in Sources */,
 				0AAAD3AA294C9D0500537104 /* CityControllerHours.swift in Sources */,
 				0A1214C629491F6C002A256B /* AllDayViewController.swift in Sources */,
@@ -330,6 +337,7 @@
 				0A31C1B92947C43F00E4730E /* AppDelegate.swift in Sources */,
 				0AAAD3AE294DF37600537104 /* HoursCollectionViewCell.swift in Sources */,
 				0A1214BE29491C9E002A256B /* CitiesPageController.swift in Sources */,
+				0A264C7D295CFAAF0030B421 /* DBCitiesExtension.swift in Sources */,
 				0AF60402295C7BE7000F22E7 /* CityDataCodable.swift in Sources */,
 				0AD8FDDA2951C77000606CA6 /* HoursControllerCell.swift in Sources */,
 				0A31C1D22948A76D00E4730E /* OnBoardingViewController.swift in Sources */,

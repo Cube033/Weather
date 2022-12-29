@@ -30,10 +30,10 @@ class CityNamePicker {
         viewController.present(alertController, animated: true)
     }
     
-       static func setAlert(showIn viewController: UIViewController, textMessage: String) {
+    static func setAlert(showIn viewController: UIViewController, textMessage: String) {
         let alert = UIAlertController(title: "Внимание", message: textMessage, preferredStyle: .alert)
         let actionDismiss = UIAlertAction(title: "Закрыть", style: .default) { (_) -> Void in
-//            self.dismiss(animated: true, completion: nil)
+            //            self.dismiss(animated: true, completion: nil)
         }
         alert.addAction(actionDismiss)
         viewController.present(alert, animated: true, completion: nil)

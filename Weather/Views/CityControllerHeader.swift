@@ -187,6 +187,18 @@ class CityControllerHeader: UIView {
         addElements()
     }
     
+    func setupModelData (model: DayMiniModel) {
+        minMaxTempLabel.text = "\(model.minTemp)° /\(model.maxTemp)°"
+        currentTempLabel.text = "\(model.curTemp)°"
+        weatherDescriptionLabel.text = "\(model.weatherDescription)"
+        precipitationLabel.text = "\(model.precipitation)"
+        humidityLabel.text =  "\(model.windSpeed) %"
+        windLabel.text = "\(model.humidity) м\\с"
+        dayDescriptionLabel.text = "\(model.dayDescription) %"
+        sunriseTimeLabel.text = "\(model.sunriseTime)"
+        sunsetTimeLabel.text = "\(model.sunsetTime)"
+    }
+    
     private func addElements() {
         
         addSubview(containerView)

@@ -11,9 +11,11 @@ class CityViewController: UITableViewController {
 
     var cityDaysModel: CityDaysModel?
     
+    var cityData: CityDataCodable
+    
     var navController: UINavigationController
     
-    let cityControllerHeader = CityControllerHeader(dayMiniModel: DayMiniModel.getEmptyModel())
+    lazy var cityControllerHeader = CityControllerHeader(dayMiniModel: DayMiniModel.getEmptyModel())
     
     let cityControllerHours = CityControllerHours(dayHoursIconModel: DayHoursIconModel.getEmptyModel())
     
@@ -25,8 +27,9 @@ class CityViewController: UITableViewController {
         }
     }
     
-    init(navController: UINavigationController){
+    init(navController: UINavigationController, cityData: CityDataCodable){
         self.navController = navController
+        self.cityData = cityData
         //self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -56,6 +59,24 @@ class CityViewController: UITableViewController {
 //                print("nav controller is empty")
 //            }
         }, for: .touchUpInside)
+        
+        setupWeather()
+    }
+    
+    private func setupWeather() {
+        NetworkManager.shared.getCurrentWeather(cityData: cityData, completion:
+                                                {(currentWeatherOptional) in
+            if let currentWeather = currentWeatherOptional {
+                DispatchQueue.main.async {
+                    //self.cityControllerHeader = CityControllerHeader(dayMiniModel: )
+                    self.cityControllerHeader.setupModelData(model: DayMiniModel.getModelByCurrentWeather(currentWeather: currentWeather))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    CityNamePicker.setAlert(showIn: self, textMessage: "Произошла ошибка")
+                }
+            }
+        })
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
