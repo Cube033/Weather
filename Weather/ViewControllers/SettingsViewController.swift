@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController {
     }()
     
     let containerView = {
-        var view = UILabel()
+        var view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.backgroundColor = UIColor(red: 0.914, green: 0.933, blue: 0.98, alpha: 1).cgColor
         view.layer.cornerRadius = 10
@@ -94,15 +94,14 @@ class SettingsViewController: UIViewController {
         let attributedString = NSAttributedString(string: NSLocalizedString("Установить", comment: ""), attributes:[
             NSAttributedString.Key.font : UIFont(name: "Rubik-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16),
             NSAttributedString.Key.foregroundColor : UIColor(red: 0.914, green: 0.933, blue: 0.98, alpha: 1),
-            NSAttributedString.Key.underlineStyle:1.0
         ])
         view.setAttributedTitle(attributedString, for: .normal)
         return view
     }()
-    let tempSwitch = SettingsSwitch()
-    let speedWindSwitch = SettingsSwitch()
-    let timeFormatSwitch = SettingsSwitch()
-    let notificationSwitch = SettingsSwitch()
+    let tempSwitch = SettingsSwitchView(settingName: "", text1: "C", text2: "F", complition: nil)
+    let speedWindSwitch = SettingsSwitchView(settingName: "", text1: "Mi", text2: "Km", complition: nil)
+    let timeFormatSwitch = SettingsSwitchView(settingName: "", text1: "12", text2: "24", complition: nil)
+    let notificationSwitch = SettingsSwitchView(settingName: "", text1: "On", text2: "Off", complition: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +112,13 @@ class SettingsViewController: UIViewController {
     private func setView() {
         view.backgroundColor = UIColor(red: 0.125, green: 0.306, blue: 0.78, alpha: 1)
         
+        setButton.addTarget(self, action: #selector(setButtonAction), for: .touchUpInside)
+        
         addElements()
+    }
+    
+    @objc private func setButtonAction() {
+        self.dismiss(animated: true)
     }
     
     private func addElements(){
@@ -190,22 +195,22 @@ class SettingsViewController: UIViewController {
             
             tempSwitch.widthAnchor.constraint(equalToConstant: 80),
             tempSwitch.heightAnchor.constraint(equalToConstant: 30),
-            tempSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            tempSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30),
             tempSwitch.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 57),
             
             speedWindSwitch.widthAnchor.constraint(equalToConstant: 80),
             speedWindSwitch.heightAnchor.constraint(equalToConstant: 30),
-            speedWindSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            speedWindSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30),
             speedWindSwitch.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 107),
             
             timeFormatSwitch.widthAnchor.constraint(equalToConstant: 80),
             timeFormatSwitch.heightAnchor.constraint(equalToConstant: 30),
-            timeFormatSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            timeFormatSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30),
             timeFormatSwitch.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 157),
             
             notificationSwitch.widthAnchor.constraint(equalToConstant: 80),
             notificationSwitch.heightAnchor.constraint(equalToConstant: 30),
-            notificationSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            notificationSwitch.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -30),
             notificationSwitch.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 207),
         ])
     }

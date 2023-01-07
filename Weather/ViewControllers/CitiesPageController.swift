@@ -158,6 +158,7 @@ extension CitiesPageController: UIPageViewControllerDelegate {
         if completed {
             if let index = viewControllersArray.firstIndex(of: pageViewController.viewControllers!.first!) {
                 self.pageControl.currentPage = index
+                navigationItem.title = index.description
             }
         }
     }

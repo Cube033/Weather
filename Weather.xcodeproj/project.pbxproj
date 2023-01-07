@@ -49,7 +49,7 @@
 		0AD8FDDA2951C77000606CA6 /* HoursControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */; };
 		0AD8FDDD29550CB200606CA6 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 0AD8FDDC29550CB200606CA6 /* Charts */; };
 		0AF603FA2955345A000F22E7 /* DayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF603F92955345A000F22E7 /* DayDetailView.swift */; };
-		0AF603FC295ADCF3000F22E7 /* SettingsSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF603FB295ADCF3000F22E7 /* SettingsSwitch.swift */; };
+		0AF603FC295ADCF3000F22E7 /* SettingsSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF603FB295ADCF3000F22E7 /* SettingsSwitchView.swift */; };
 		0AF603FE295AF27D000F22E7 /* CityNamePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF603FD295AF27D000F22E7 /* CityNamePicker.swift */; };
 		0AF60400295C4934000F22E7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF603FF295C4934000F22E7 /* NetworkManager.swift */; };
 		0AF60402295C7BE7000F22E7 /* CityDataCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF60401295C7BE7000F22E7 /* CityDataCodable.swift */; };
@@ -99,7 +99,7 @@
 		0AAAD3B5294E42A100537104 /* CityDaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDaysModel.swift; sourceTree = "<group>"; };
 		0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursControllerCell.swift; sourceTree = "<group>"; };
 		0AF603F92955345A000F22E7 /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
-		0AF603FB295ADCF3000F22E7 /* SettingsSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitch.swift; sourceTree = "<group>"; };
+		0AF603FB295ADCF3000F22E7 /* SettingsSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchView.swift; sourceTree = "<group>"; };
 		0AF603FD295AF27D000F22E7 /* CityNamePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNamePicker.swift; sourceTree = "<group>"; };
 		0AF603FF295C4934000F22E7 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0AF60401295C7BE7000F22E7 /* CityDataCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataCodable.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 				0AAAD3B3294E327400537104 /* CityControllerDayCell.swift */,
 				0AD8FDD92951C77000606CA6 /* HoursControllerCell.swift */,
 				0AF603F92955345A000F22E7 /* DayDetailView.swift */,
-				0AF603FB295ADCF3000F22E7 /* SettingsSwitch.swift */,
+				0AF603FB295ADCF3000F22E7 /* SettingsSwitchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				0A31C1D42948A9AC00E4730E /* SettingsManager.swift in Sources */,
 				0AF603FA2955345A000F22E7 /* DayDetailView.swift in Sources */,
 				0A31C1D62949142500E4730E /* LocationManager.swift in Sources */,
-				0AF603FC295ADCF3000F22E7 /* SettingsSwitch.swift in Sources */,
+				0AF603FC295ADCF3000F22E7 /* SettingsSwitchView.swift in Sources */,
 				0AAAD3AC294C9DA000537104 /* DayHoursIconModel.swift in Sources */,
 				0AAAD3B4294E327400537104 /* CityControllerDayCell.swift in Sources */,
 				0A1214C429491F4F002A256B /* HoursViewController.swift in Sources */,
