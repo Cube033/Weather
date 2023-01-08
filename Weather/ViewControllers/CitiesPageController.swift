@@ -156,9 +156,17 @@ extension CitiesPageController: UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            if let index = viewControllersArray.firstIndex(of: pageViewController.viewControllers!.first!) {
-                self.pageControl.currentPage = index
-                navigationItem.title = index.description
+            if let viewControllersOfPage = pageViewController.viewControllers,
+               let currentViewController = viewControllersOfPage.first {
+                
+                if let index = viewControllersArray.firstIndex(of: currentViewController) {
+                    self.pageControl.currentPage = index
+                }
+                if let CityController = currentViewController as? CityViewController {
+                    navigationItem.title = CityController.cityData.localNames.ru
+                } else {
+                    navigationItem.title = "Добавьте город"
+                }
             }
         }
     }

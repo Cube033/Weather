@@ -54,7 +54,8 @@ class NetworkManager {
     
     func getCurrentWeather(cityData: CityDataCodable, completion: ((_ currentWeatherModelCodable: CurrentWeatherModelCodable?)->Void)?) {
         
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(cityData.lat)&lon=\(cityData.lon)&appid=7ce6971dfd0b691b1cb9cf369a92d7e6"
+        let unitsOption = SettingsManager.shared.tempetatureFormat == .celsius ? "metric" : "imperial"
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(cityData.lat)&lon=\(cityData.lon)&units=\(unitsOption)&appid=7ce6971dfd0b691b1cb9cf369a92d7e6"
         
         guard let urlStringEnc = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
             print("🐙 ошибка преобразования")

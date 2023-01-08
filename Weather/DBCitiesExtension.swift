@@ -10,7 +10,7 @@ import CoreData
 extension DBCities {
     
     func convertToCityDataCodable() -> CityDataCodable {
-        var cityData = CityDataCodable(name: cityName ?? "",
+        let cityData = CityDataCodable(name: cityName ?? "",
                                        localNames: LocalNameCodable(ru: cityLabel ?? ""),
                                    lat: latitude,
                                    lon: longitude,

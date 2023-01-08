@@ -23,14 +23,14 @@ class SettingsSwitchView: UIView {
     private var text1: String = ""
     private var text2: String = ""
     
-    private var currentSettingsSwitchState: SettingsSwitchState
+    var currentSettingsSwitchState: SettingsSwitchState
     
     private var complition: (() -> Void)?
     
     private let leftButton = {
         var view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-
+        
         return view
     }()
     
@@ -40,7 +40,7 @@ class SettingsSwitchView: UIView {
         return view
     }()
     
-
+    
     override init(frame: CGRect) {
         currentSettingsSwitchState = .state1
         super.init(frame: frame)
@@ -56,7 +56,24 @@ class SettingsSwitchView: UIView {
         self.complition = complition
         self.text1 = text1
         self.text2 = text2
+        
+        restoreSetting(settingName: settingName)
         setupView()
+    }
+    
+    private func restoreSetting(settingName: String) {
+        switch settingName {
+        case "tempetatureFormat":
+            currentSettingsSwitchState = SettingsManager.shared.tempetatureFormat == .celsius ? .state1 : .state2
+        case "measurementType":
+            currentSettingsSwitchState = SettingsManager.shared.measurementType == .miles ? .state1 : .state2
+        case "timeFormat":
+            currentSettingsSwitchState = SettingsManager.shared.timeFormat == .format12 ? .state1 : .state2
+        case "notificationsIsOn":
+            currentSettingsSwitchState = SettingsManager.shared.notificationsIsOn ? .state1 : .state2
+        default:
+            return
+        }
     }
     
     private func setupView(){

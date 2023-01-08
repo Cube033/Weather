@@ -98,11 +98,10 @@ class SettingsViewController: UIViewController {
         view.setAttributedTitle(attributedString, for: .normal)
         return view
     }()
-    let tempSwitch = SettingsSwitchView(settingName: "", text1: "C", text2: "F", complition: nil)
-    let speedWindSwitch = SettingsSwitchView(settingName: "", text1: "Mi", text2: "Km", complition: nil)
-    let timeFormatSwitch = SettingsSwitchView(settingName: "", text1: "12", text2: "24", complition: nil)
-    let notificationSwitch = SettingsSwitchView(settingName: "", text1: "On", text2: "Off", complition: nil)
-    
+    let tempSwitch = SettingsSwitchView(settingName: "tempetatureFormat", text1: "C", text2: "F", complition: nil)
+    let speedWindSwitch = SettingsSwitchView(settingName: "measurementType", text1: "Mi", text2: "Km", complition: nil)
+    let timeFormatSwitch = SettingsSwitchView(settingName: "timeFormat", text1: "12", text2: "24", complition: nil)
+    let notificationSwitch = SettingsSwitchView(settingName: "notificationsIsOn", text1: "On", text2: "Off", complition: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -118,7 +117,27 @@ class SettingsViewController: UIViewController {
     }
     
     @objc private func setButtonAction() {
-        self.dismiss(animated: true)
+        print("🍀🍀🍀🍀🍀🍀🍀")
+        printUserDefults()
+        print("🐙🐙🐙🐙🐙🐙🐙")
+        storeSettings()
+        printUserDefults()
+        print("🦊🦊🦊🦊🦊🦊🦊")
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func storeSettings() {
+        SettingsManager.shared.tempetatureFormat = tempSwitch.currentSettingsSwitchState == .state1 ? .celsius : .fahrenheit
+        SettingsManager.shared.measurementType = speedWindSwitch.currentSettingsSwitchState == .state1 ? .miles : .kilometers
+        SettingsManager.shared.timeFormat = timeFormatSwitch.currentSettingsSwitchState == .state1 ? .format12
+        : .format24
+        SettingsManager.shared.notificationsIsOn = notificationSwitch.currentSettingsSwitchState == .state1
+    }
+    
+    private func printUserDefults() {
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+            print("\(key) = \(value) \n")
+        }
     }
     
     private func addElements(){

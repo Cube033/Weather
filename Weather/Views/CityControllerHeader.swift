@@ -56,6 +56,7 @@ class CityControllerHeader: UIView {
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.05
         view.attributedText = NSMutableAttributedString(string: "\(model.minTemp)° /\(model.maxTemp)°", attributes: [NSAttributedString.Key.kern: 0.32, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        view.textAlignment = .center
         return view
     }()
     
@@ -67,6 +68,7 @@ class CityControllerHeader: UIView {
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 0.94
         view.attributedText = NSMutableAttributedString(string: "\(model.curTemp)°", attributes: [NSAttributedString.Key.kern: 3.06, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        view.textAlignment = .center
         return view
     }()
     
@@ -247,12 +249,12 @@ class CityControllerHeader: UIView {
             sunsetImageView.centerXAnchor.constraint(equalTo: sunTrackImageView.trailingAnchor),
             sunsetImageView.topAnchor.constraint(equalTo: sunTrackImageView.bottomAnchor, constant: 3),
             
-            minMaxTempLabel.widthAnchor.constraint(equalToConstant: 70),
+            minMaxTempLabel.widthAnchor.constraint(equalToConstant: 80),
             minMaxTempLabel.heightAnchor.constraint(equalToConstant: 20),
             minMaxTempLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             minMaxTempLabel.topAnchor.constraint(equalTo: sunTrackImageView.topAnchor, constant: 16),
             
-            currentTempLabel.widthAnchor.constraint(equalToConstant: 45),
+            currentTempLabel.widthAnchor.constraint(equalToConstant: 100),
             currentTempLabel.heightAnchor.constraint(equalToConstant: 40),
             currentTempLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             currentTempLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 58),

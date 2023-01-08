@@ -27,6 +27,10 @@ struct DayMiniModel {
     
     static func getModelByCurrentWeather(currentWeather: CurrentWeatherModelCodable) -> DayMiniModel {
         
+//        let minTemp = ConverterManager.shared.getWeatherFromFarenheit(farenheit: currentWeather.main.tempMin)
+//        let maxTemp = ConverterManager.shared.getWeatherFromFarenheit(farenheit: currentWeather.main.tempMax)
+//        let curTemp = ConverterManager.shared.getWeatherFromFarenheit(farenheit: currentWeather.main.temp)
+        
         return DayMiniModel(minTemp: Int(currentWeather.main.tempMin),
                             maxTemp: Int(currentWeather.main.tempMax),
                             curTemp: Int(currentWeather.main.temp),
